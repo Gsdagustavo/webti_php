@@ -1,1 +1,1 @@
-php -S localhost:8000 -t "C:\xampp\htdocs\webti_php"
+C:\xampp\php\php.exe -S localhost:8000
