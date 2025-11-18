@@ -33,6 +33,21 @@
 <body>
 
     <?php
+    session_start();
+
+    if (!isset($_SESSION["username"])) {
+        header("Location: login.php");
+        exit();
+    }
+
+    if (!isset($_GET["username"])) {
+        header("Location: login.php");
+        exit();
+    }
+
+    $_SESSION["username"] = $_GET["username"];
+    echo "<p>Bem-vindo, " . htmlspecialchars($_SESSION["username"]) . "!</p>";
+
     if (isset($_GET["error"])) {
         switch ($_GET["error"]) {
             case "faltando_dados":
